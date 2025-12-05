@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // Se você estiver usando TypeScript, você pode precisar instalar e usar o Axios, 
 // mas o fetch nativo funciona perfeitamente.
 
-const API_URL = 'http://127.0.0.1:5000/predict_winner';
+const API_URL = 'https://predmedal-hrcdgjgtbwfjedek.brazilsouth-01.azurewebsites.net/predict_winner';
 
 function PredictionForm() {
     // 1. Estados para gerenciar a entrada do usuário e o resultado
@@ -58,7 +58,7 @@ function PredictionForm() {
         } catch (err) {
             console.error("Erro ao processar a requisição:", err);
             setError(err.message.includes("Failed to fetch") 
-                     ? "Erro de Conexão: Certifique-se de que a API Flask está rodando em http://127.0.0.1:5000" 
+                     ? "Erro de Conexão: Certifique-se de que a API Azure está rodando em https://predmedal-hrcdgjgtbwfjedek.brazilsouth-01.azurewebsites.net" 
                      : err.message);
         } finally {
             setIsLoading(false);
