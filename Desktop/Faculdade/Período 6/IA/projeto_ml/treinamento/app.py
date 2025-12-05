@@ -5,7 +5,7 @@ from flask_cors import CORS
 import numpy as np
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict_winner": {"origins": "*"}})
+CORS(app)
 
 
 # O modelo treinado
